@@ -1,0 +1,26 @@
+git init
+git add <file>
+git status
+git commit (git commit -m "Mensaje del commit")
+git push
+git pull
+git clone
+
+git diff
+
+Working directory>>(git add)>>staging area>>(git commit)>>repository
+
+--------------Para crear ramas
+ver ramas
+git branch
+crear rama
+git branch nombre de la rama
+Seleccionar rama
+git checkout 'nombre de la rama'
+git remote add origin https://github.com/Direccion de git hub
+
+------------------------------configuracion global
+$ git config --global user.name "John Doe" //Usuario
+$ git config --global user.email johndoe@example.com //Correo
+
+.
