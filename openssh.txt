@@ -1,0 +1,44 @@
+Servidor SSH en Ubuntu
+SSH es el nombre del protocolo y del programa que permite conectarse a un servidor o equipo de forma remota y segura por medio de un canal de información cifrado.
+
+
+Desde macOS o Linux es posible utilizarlo desde la terminal, y desde Windows es necesario instalar un cliente como Putty o Cygwin.
+
+Instalar Servidor SSH en Ubuntu
+sudo apt-get install openssh-server
+Podemos instalar el cliente también
+
+sudo apt-get install openssh-client
+Operaciones
+Arrancar
+
+sudo systemctl start sshd.service
+Parar
+
+sudo systemctl stop sshd.service
+Reiniciar
+
+sudo systemctl restart sshd.service
+Que el servicio se inicie con el sistema
+
+sudo systemctl enable sshd.service
+Ver estado
+
+sudo systemctl status sshd.service
+Acceder al archivo de configuración
+
+nano /etc/ssh/sshd_config
+Cómo conectarse desde una consola
+ssh usuario@ip_del_servidor
+Seguidad
+Por defecto, el servidor SSh utilizará el puerto 22. Podremos cambiarlo por otro en el fichero /etc/ssh/sshd_config. Esto no aumenta la seguridad por sí mismo, pero ayuda a pasar inadvertidos a bots u otros programas que escaneen la red.
+
+Otro parámetro que podremos configurar es el PermitRootLogin no. Esto no permitirá conectarnos con el usuario root, que sería el que cualquier bot intentaría utilizar para entrar. Suempre podríamos elevar nuestros permisos utilizando sudo.
+
+Otros parámetros a tener en cuenta:
+
+LoginGraceTime establece un tiempo límite para insertar la contraseña
+MaxAuthTries establece un número de intentos permitidos antes de desconectarnos
+MaxStartups establece un número de inicios de sesión desde una misma IP de forma simultánea
+AllowUsers establece una lista de usuarios que pueden iniciar sesión
+DenyUsers establece una lista de usuarios que no pueden iniciar sesión
