@@ -23,4 +23,4 @@ git remote add origin https://github.com/Direccion de git hub
 $ git config --global user.name "John Doe" //Usuario
 $ git config --global user.email johndoe@example.com //Correo
 
-.
+.......
